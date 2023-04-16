@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dom-Ass</title>
+    <style>
+      body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      #box {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border: 2px solid #5e5c5c40;
+        padding: 20px 40px 50px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      }
+      #value {
+        border: 2px solid #5e5c5c;
+        padding: 3px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="box">
+      <h1 id="heading">Counter App</h1>
+      <div>
+        <button id="dec" onclick="decrement()">Decrement by 1</button>
+        <span id="value">0</span>
+        <button id="inc" onclick="increment()">Increment by 1</button>
+      </div>
+      <br />
+      <button id="reset" onclick="reset()">Reset Value</button>
+    </div>
+    <script>
+      // decriment
+      function decrement() {
+        let val = document.querySelector("#value");
+        let num = +val.innerText;
+        console.log(typeof num);
+        if (num > 0 && num <= 10) {
+          val.innerHTML -= 1;
+        }
+      }
+
+      // increment
+      function increment() {
+        let val = document.querySelector("#value");
+        let num = +val.innerText;
+        if (num >= 0 && num < 10) {
+          val.innerText = Number(val.innerText) + 1;
+        }
+      }
+
+    //   reset
+    function reset(){
+        let val = document.querySelector("#value")
+        val.innerText="0"
+    }
+    </script>
+  </body>
+</html>
